@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Nuevos Lanzamientos | Loto Hats</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e8f6f9; /* Fondo claro y refrescante */
+            color: #333;
+        }
+        header {
+            background-color: #4da6ff; /* Azul vibrante */
+            color: #fff;
+            padding: 15px 20px;
+            text-align: center;
+            position: relative;
+            z-index: 1; /* Asegura que el header esté debajo del menú desplegable */
+        }
+        .dropdown {
+            position: fixed; /* Cambiado a fixed */
+            top: 15px;
+            left: 20px;
+            z-index: 1000; /* Asegura que esté sobre el header */
+        }
+        .dropdown-button {
+            background-color: #333;
+            color: #ffffff;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease;
+        }
+        .dropdown-button:hover {
+            background-color: #555;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 100%;
+            background-color: #3d3d3d;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            z-index: 1001; /* Asegura que el menú se muestre sobre todo */
+            min-width: 180px;
+        }
+        .dropdown-content a {
+            padding: 12px;
+            color: #ffffff;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+        .dropdown-content a:hover {
+            background-color: #555;
+        }
+        .dropdown-content.show {
+            display: block;
+        }
+        .container {
+            width: 85%;
+            margin: auto;
+            padding: 20px 0;
+        }
+        .new-arrivals {
+            margin: 20px 0;
+            padding: 20px;
+            background: #ffffff; /* Fondo blanco que resalta */
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        .new-arrivals-title {
+            font-size: 2.5rem;
+            color: #4da6ff; /* Azul fresco para el título */
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .item {
+            background: #f0f9ff; /* Fondo azul muy suave para cada producto */
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .item img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .item h2 {
+            margin: 10px 0;
+            color: #333;
+        }
+        .item p {
+            color: #666;
+        }
+        .item .price {
+            font-size: 1.5em;
+            color: #4da6ff;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            margin: 10px 0;
+            color: #fff;
+            background-color: #4da6ff;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #3399ff;
+            transform: scale(1.05);
+        }
+        .btn:active {
+            background-color: #1a8cff;
+            transform: scale(0.98);
+        }
+        .footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="dropdown">
+            <button class="dropdown-button" id="menu-button">Menú</button>
+            <div class="dropdown-content" id="dropdown-menu">
+                <a href="index.html">Página Principal</a>
+                <a href="ofertas.html">Ofertas</a>
+                <a href="iniciar-sesion.html">Iniciar Sesión</a>
+                <a href="mi-carrito.html">Mi Carrito</a>
+                <a href="colecciones.html">Colecciones</a>
+            </div>
+        </div>
+        <img src="loto hat logo.png" alt="Loto Hats" width="200" height="200">
+    </header>
+
+    <div class="container">
+        <section class="new-arrivals">
+            <h1 class="new-arrivals-title">✨ Nuevos Lanzamientos ✨</h1>
+
+            <div class="item">
+                <img src="nueva-gorra1.jpg" alt="Gorra Nueva 1">
+                <h2>Gorra Estilo Verano</h2>
+                <p>¡Refrescante y ligera! Ideal para los días soleados.</p>
+                <p class="price">$19.99</p>
+                <a href="producto-nueva1.html" class="btn">Ver más detalles</a>
+            </div>
+
+            <div class="item">
+                <img src="nueva-gorra2.jpg" alt="Gorra Nueva 2">
+                <h2>Gorra Urbana</h2>
+                <p>Un estilo moderno y fresco para tu día a día.</p>
+                <p class="price">$24.99</p>
+                <a href="producto-nueva2.html" class="btn">Ver más detalles</a>
+            </div>
+
+            <!-- Puedes agregar más lanzamientos aquí -->
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Loto Hats. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- JavaScript para el menú desplegable -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var menuButton = document.getElementById('menu-button');
+            var dropdownMenu = document.getElementById('dropdown-menu');
+
+            menuButton.addEventListener('click', function(event) {
+                event.preventDefault();
+                // Mostrar u ocultar el menú desplegable
+                dropdownMenu.classList.toggle('show');
+            });
+
+            // Ocultar el menú desplegable al hacer clic fuera de él
+            document.addEventListener('click', function(event) {
+                if (!menuButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                    dropdownMenu.classList.remove('show');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
+
+
+

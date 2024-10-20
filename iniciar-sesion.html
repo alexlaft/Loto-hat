@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión | Loto Hats</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        .container h1 {
+            color: #333;
+        }
+        .btn-google {
+            background-color: #db4437;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+        .btn-google:hover {
+            background-color: #c1351d;
+        }
+        .btn-google:active {
+            background-color: #a82b1c;
+        }
+        .error {
+            color: #e74c3c;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Iniciar Sesión</h1>
+        <button class="btn-google" id="sign-in-button">Iniciar sesión con Google</button>
+        <p class="error" id="error-message"></p>
+    </div>
+
+    <!-- Importar el SDK de Firebase -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
+        import { getAuth, signInWithPopup, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-analytics.js";
+
+        // Configuración de Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyAJNDhH0GSljbJqMw1fZf8nYtr6vTmr1dM",
+            authDomain: "loto-hats.firebaseapp.com",
+            projectId: "loto-hats",
+            storageBucket: "loto-hats.appspot.com",
+            messagingSenderId: "578085467100",
+            appId: "1:578085467100:web:03bb4066d764725ba95519",
+            measurementId: "G-GR1WRN85GY"
+        };
+
+        // Inicializar Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const provider = new GoogleAuthProvider();
+        const analytics = getAnalytics(app);
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const signInButton = document.getElementById('sign-in-button');
+            const errorMessage = document.getElementById('error-message');
+
+            signInButton.addEventListener('click', function() {
+                signInWithPopup(auth, provider)
+                    .then((result) => {
+                        // Redirige a la página principal tras el inicio de sesión
+                        window.location.href = 'index.html';
+                    })
+                    .catch((error) => {
+                        // Muestra el mensaje de error
+                        errorMessage.textContent = `Error: ${error.message}`;
+                    });
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+

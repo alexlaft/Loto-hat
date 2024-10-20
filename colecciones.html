@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Colecciones | Loto Hats</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #101010; /* Fondo general de la página */
+        }
+        header {
+            background-color: #6d6d6d;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .dropdown {
+            position: fixed; /* Menú desplegable fijo en la pantalla */
+            top: 10px;
+            left: 20px;
+            z-index: 1001; /* Asegura que el menú esté sobre todos los demás elementos */
+        }
+        .dropdown-button {
+            background-color: #444;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease;
+        }
+        .dropdown-button:hover {
+            background-color: #555;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 100%;
+            background-color: #444;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            z-index: 1001; /* Asegura que el menú esté sobre todos los demás elementos */
+            min-width: 160px;
+        }
+        .dropdown-content a {
+            padding: 10px;
+            color: #ffffff;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+        .dropdown-content a:hover {
+            background-color: #555;
+        }
+        .dropdown-content.show {
+            display: block;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+        .collection-section {
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            position: relative;
+            background-color: #f4f4f4; /* Fondo por defecto */
+        }
+        .collection-section[data-bg] {
+            background-color: var(--collection-bg-color); /* Fondo modificable usando CSS variables */
+        }
+        .collection-title {
+            font-size: 2rem;
+            color: #FF5722; /* Naranja vibrante para el título */
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .collection-description {
+            text-align: center;
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+        .item {
+            background: #ffffff; /* Fondo blanco para cada ítem */
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .item img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .item h2 {
+            margin: 10px 0;
+            color: #333;
+        }
+        .item p {
+            color: #666;
+        }
+        .item .price {
+            font-size: 1.5em;
+            color: #FF5722; /* Naranja vibrante para precios */
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px 0;
+            color: #fff;
+            background-color: #FF5722; /* Naranja vibrante para el botón */
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #E64A19; /* Naranja más oscuro al pasar el ratón */
+            transform: scale(1.05);
+        }
+        .btn:active {
+            background-color: #D84315; /* Naranja más oscuro al hacer clic */
+            transform: scale(0.98);
+        }
+        .footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="dropdown">
+            <button class="dropdown-button" id="menu-button">Menú</button>
+            <div class="dropdown-content" id="dropdown-menu">
+                <a href="index.html">Página Principal</a>
+                <a href="iniciar-sesion.html">Iniciar Sesión</a>
+                <a href="mi-carrito.html">Mi Carrito</a>
+                <a href="ofertas.html">Ofertas</a>
+                <a href="nuevos-lanzamientos.html">Nuevos Lanzamientos</a>
+                <!-- La opción "Colecciones" ha sido eliminada -->
+            </div>
+        </div>
+        <img src="loto hat logo.png" alt="Loto Hats" width="200" height="200">
+    </header>
+
+    <div class="container">
+        <section class="collection-section" style="--collection-bg-color: #FFDDC1;"> <!-- Fondo de otoño modificado aquí -->
+            <h1 class="collection-title">🍂 Otoño 🍂</h1>
+            <p class="collection-description">Disfruta de nuestra colección de otoño, diseñada para combinar con la calidez de la temporada. Estas gorras están hechas para ofrecerte estilo y confort durante los días frescos.</p>
+            <div class="item">
+                <img src="otoño1.jpg" alt="Gorra Otoño 1" width="200" height="200">
+                <h2>Gorra Otoño 1</h2>
+                <p>Descripción breve de la gorra de otoño. ¡Ideal para la temporada!</p>
+                <p class="price">$19.99</p>
+                <a href="producto-otoño1.html" class="btn">Más detalles</a>
+            </div>
+            <div class="item">
+                <img src="otoño2.jpg" alt="Gorra Otoño 2" width="200" height="200">
+                <h2>Gorra Otoño 2</h2>
+                <p>Descripción breve de la segunda gorra de otoño. ¡Perfecta para combinar con tu look!</p>
+                <p class="price">$22.99</p>
+                <a href="producto-otoño2.html" class="btn">Más detalles</a>
+            </div>
+        </section>
+
+        <section class="collection-section" style="--collection-bg-color: #C0E4F0;"> <!-- Fondo de invierno modificado aquí -->
+            <h1 class="collection-title">❄️ Invierno ❄️</h1>
+            <p class="collection-description">Nuestra colección de invierno te mantendrá abrigado sin sacrificar el estilo. Gorras diseñadas para enfrentar el frío con la máxima comodidad y elegancia.</p>
+            <div class="item">
+                <img src="invierno1.jpg" alt="Gorra Invierno 1" width="200" height="200">
+                <h2>Gorra Invierno 1</h2>
+                <p>Descripción breve de la gorra de invierno. ¡Perfecta para el frío!</p>
+                <p class="price">$24.99</p>
+                <a href="producto-invierno1.html" class="btn">Más detalles</a>
+            </div>
+            <div class="item">
+                <img src="invierno2.jpg" alt="Gorra Invierno 2" width="200" height="200">
+                <h2>Gorra Invierno 2</h2>
+                <p>Descripción breve de la segunda gorra de invierno. ¡Mantente abrigado con estilo!</p>
+                <p class="price">$27.99</p>
+                <a href="producto-invierno2.html" class="btn">Más detalles</a>
+            </div>
+        </section>
+
+        <section class="collection-section" style="--collection-bg-color: #F4F1BB;"> <!-- Fondo de verano modificado aquí -->
+            <h1 class="collection-title">☀️ Verano ☀️</h1>
+            <p class="collection-description">Nuestra colección de verano está diseñada para ofrecerte frescura y estilo bajo el sol. Gorras ligeras y coloridas para que disfrutes de la temporada cálida con comodidad.</p>
+            <div class="item">
+                <img src="verano1.jpg" alt="Gorra Verano 1" width="200" height="200">
+                <h2>Gorra Verano 1</h2>
+                <p>Descripción breve de la gorra de verano. ¡Perfecta para disfrutar del sol!</p>
+                <p class="price">$17.99</p>
+                <a href="producto-verano1.html" class="btn">Más detalles</a>
+            </div>
+            <div class="item">
+                <img src="verano2.jpg" alt="Gorra Verano 2" width="200" height="200">
+                <h2>Gorra Verano 2</h2>
+                <p>Descripción breve de la segunda gorra de verano. ¡Perfecta para disfrutar del sol!</p>
+                <p class="price">$17.99</p>
+                <a href="producto-verano2.html" class="btn">Más detalles</a>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Loto Hats. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- JavaScript para el menú desplegable -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var menuButton = document.getElementById('menu-button');
+            var dropdownMenu = document.getElementById('dropdown-menu');
+
+            menuButton.addEventListener('click', function(event) {
+                event.preventDefault();
+                // Toggle the 'show' class on the dropdown menu
+                dropdownMenu.classList.toggle('show');
+            });
+
+            // Click outside to close the menu
+            document.addEventListener('click', function(event) {
+                if (!menuButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                    dropdownMenu.classList.remove('show');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
+
+
+

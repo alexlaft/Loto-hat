@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Nuevas Ofertas | Loto Hats</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9; /* Color de fondo claro */
+            color: #333;
+        }
+        header {
+            background-color: #6d6d6d; /* Gris oscuro para el encabezado */
+            color: #fff;
+            padding: 15px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .dropdown {
+            position: fixed; /* Menú desplegable fijo en la pantalla */
+            top: 15px;
+            left: 20px;
+            z-index: 1001; /* Asegura que el menú esté sobre todos los demás elementos */
+        }
+        .dropdown-button {
+            background-color: #333;
+            color: #ffffff;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease;
+        }
+        .dropdown-button:hover {
+            background-color: #555;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 100%;
+            background-color: #3d3d3d; /* Fondo oscuro para el menú desplegable */
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            z-index: 1001; /* Asegura que el menú esté sobre todos los demás elementos */
+            min-width: 180px;
+        }
+        .dropdown-content a {
+            padding: 12px;
+            color: #ffffff;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+        .dropdown-content a:hover {
+            background-color: #555; /* Fondo más claro al pasar el ratón */
+        }
+        .dropdown-content.show {
+            display: block;
+        }
+        .container {
+            width: 85%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+        .offers {
+            margin: 20px 0;
+            padding: 20px;
+            background: #ffffff; /* Fondo blanco para destacar las ofertas */
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        .offers-title {
+            font-size: 2rem;
+            color: #FF5722; /* Naranja vibrante para el título */
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .offer {
+            background: #f9f9f9; /* Color de fondo claro para cada oferta */
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative; /* Necesario para posicionar el fuego */
+        }
+        .offer::before {
+            content: "🔥";
+            font-size: 2rem;
+            color: #FF5722;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        .offer img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .offer h2 {
+            margin: 10px 0;
+            color: #333; /* Negro para los títulos */
+        }
+        .offer p {
+            color: #666;
+        }
+        .offer .price {
+            font-size: 1.5em;
+            color: #FF5722; /* Naranja vibrante para precios */
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            margin: 10px 0;
+            color: #fff;
+            background-color: #FF5722; /* Naranja vibrante para el botón */
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #E64A19; /* Naranja más oscuro al pasar el ratón */
+            transform: scale(1.05);
+        }
+        .btn:active {
+            background-color: #D84315; /* Naranja más oscuro al hacer clic */
+            transform: scale(0.98);
+        }
+        .footer {
+            background-color: #333; /* Fondo oscuro para el pie de página */
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="dropdown">
+            <button class="dropdown-button" id="menu-button">Menú</button>
+            <div class="dropdown-content" id="dropdown-menu">
+                <a href="index.html">Página Principal</a>
+                <a href="iniciar-sesion.html">Iniciar Sesión</a>
+                <a href="mi-carrito.html">Mi Carrito</a>
+                <a href="colecciones.html">Colecciones</a>
+            </div>
+        </div>
+        <img src="loto hat logo.png" alt="Loto Hats" width="200" height="200">
+    </header>
+
+    <div class="container">
+        <section class="offers">
+            <h1 class="offers-title">🔥 Nuevas Ofertas 🔥</h1>
+            <div class="offer">
+                <img src="oferta1.jpg" alt="Oferta 1" width="300" height="300">
+                <h2>Oferta Especial 1</h2>
+                <p>Descripción breve de la oferta. Aprovecha este descuento exclusivo.</p>
+                <p class="price">$9.99</p>
+                <a href="producto-oferta1.html" class="btn">Más detalles</a>
+            </div>
+
+            <div class="offer">
+                <img src="oferta2.jpg" alt="Oferta 2" width="300" height="300">
+                <h2>Oferta Especial 2</h2>
+                <p>Descripción breve de la oferta. ¡No te lo pierdas!</p>
+                <p class="price">$14.99</p>
+                <a href="producto-oferta2.html" class="btn">Más detalles</a>
+            </div>
+
+            <!-- Agrega más ofertas aquí -->
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Loto Hats. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- JavaScript para el menú desplegable -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var menuButton = document.getElementById('menu-button');
+            var dropdownMenu = document.getElementById('dropdown-menu');
+
+            menuButton.addEventListener('click', function(event) {
+                event.preventDefault();
+                // Toggle the 'show' class on the dropdown menu
+                dropdownMenu.classList.toggle('show');
+            });
+
+            // Click outside to close the menu
+            document.addEventListener('click', function(event) {
+                if (!menuButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                    dropdownMenu.classList.remove('show');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

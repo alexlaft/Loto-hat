@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Carrito | Loto Hats</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #101010;
+        }
+        header {
+            background-color: #6d6d6d;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .dropdown {
+            position: fixed; /* Menú desplegable fijo en la pantalla */
+            top: 10px;
+            left: 20px;
+            z-index: 1001; /* Asegura que el menú esté sobre todos los demás elementos */
+        }
+        .dropdown-button {
+            background-color: #444;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease;
+        }
+        .dropdown-button:hover {
+            background-color: #555;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 100%;
+            background-color: #444;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            z-index: 1001; /* Asegura que el menú esté sobre todos los demás elementos */
+            min-width: 160px;
+        }
+        .dropdown-content a {
+            padding: 10px;
+            color: #ffffff;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+        .dropdown-content a:hover {
+            background-color: #555;
+        }
+        .dropdown-content.show {
+            display: block;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+        .cart-item {
+            background: #363636;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .cart-item img {
+            max-width: 100px;
+            border-radius: 5px;
+        }
+        .cart-item-details {
+            flex: 1;
+            margin-left: 20px;
+        }
+        .cart-item h2 {
+            margin: 0;
+            color: #ffffff;
+        }
+        .cart-item p {
+            color: #555;
+        }
+        .cart-item .price {
+            font-size: 1.2em;
+            color: rgb(21, 255, 0);
+        }
+        .btn-checkout {
+            display: inline-block;
+            padding: 10px 20px;
+            color: #fff;
+            background-color: rgb(21, 255, 0);
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            cursor: pointer;
+        }
+        .btn-checkout:hover {
+            background-color: #1eae00;
+            transform: scale(1.05);
+        }
+        .btn-checkout:active {
+            background-color: #1d8b00;
+            transform: scale(0.98);
+        }
+        .footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .payment-button {
+            position: fixed;
+            top: 10px;
+            right: 20px;
+            background-color: rgb(21, 255, 0);
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .payment-button:hover {
+            background-color: #1eae00;
+        }
+        .payment-button:active {
+            background-color: #1d8b00;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="dropdown">
+            <button class="dropdown-button" id="menu-button">Menú</button>
+            <div class="dropdown-content" id="dropdown-menu">
+                <a href="iniciar-sesion.html">Iniciar Sesión</a>
+                <a href="mi-carrito.html">Mi Carrito</a>
+                <a href="ofertas.html">Ofertas</a>
+                <a href="nuevos-lanzamientos.html">Nuevos Lanzamientos</a>
+                <a href="colecciones.html">Colecciones</a>
+            </div>
+        </div>
+        <img src="loto hat logo.png" alt="Loto Hats" width="200" height="200">
+    </header>
+
+    <button class="payment-button">Método de Pago</button>
+
+    <div class="container">
+        <h1>Mi Carrito</h1>
+        <section class="cart-items">
+            <div class="cart-item">
+                <img src="loto hat (peach).jpg" alt="The peach illness">
+                <div class="cart-item-details">
+                    <h2>The peach illness</h2>
+                    <p>Descripción breve del producto.</p>
+                    <p class="price">$19.99</p>
+                </div>
+            </div>
+            
+            <div class="cart-item">
+                <img src="producto2.jpg" alt="Producto 2">
+                <div class="cart-item-details">
+                    <h2>Nombre del Producto 2</h2>
+                    <p>Descripción breve del producto.</p>
+                    <p class="price">$29.99</p>
+                </div>
+            </div>
+
+            <!-- Puedes agregar más productos aquí -->
+        </section>
+        <a href="pago.html" class="btn-checkout">Proceder al Pago</a>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Loto Hats. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- JavaScript para el menú desplegable -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var menuButton = document.getElementById('menu-button');
+            var dropdownMenu = document.getElementById('dropdown-menu');
+
+            menuButton.addEventListener('click', function(event) {
+                event.preventDefault();
+                // Toggle the 'show' class on the dropdown menu
+                dropdownMenu.classList.toggle('show');
+            });
+
+            // Click outside to close the menu
+            document.addEventListener('click', function(event) {
+                if (!menuButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                    dropdownMenu.classList.remove('show');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
